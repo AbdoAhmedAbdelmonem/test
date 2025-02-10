@@ -23,10 +23,13 @@ html {
 body{
     background: var(--d2-color);
     color: var(--white-color);
-/*     transition: background 1s ease-in-out,opacity 0.5s ease-in-out;
-    animation: changeColors 390s infinite ease-in-out; */
+    transition: background 1s ease-in-out,opacity 0.5s ease-in-out;
+    animation: changeColors 390s infinite ease-in-out;
 }
 
+body.fade-out {
+    opacity: 0;
+}
 body.light{
     background: var(--white-color);
     color: var(--d2-color);
@@ -35,23 +38,26 @@ body.light{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 4rem 12% 4rem;
+    width: 110%;
+    padding: 2rem 12% 2rem;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     display: flex;
+    justify-content: space-between;
     align-items: center;
     z-index: 5;
-    gap: 30px;
-    height: 6px;
-}
+    animation: changeColors 390s infinite ease-in-out;
 
-.logo{
-    font-size: 3rem;
-    color:var(--white-color);
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s ease;
+}
+.logo {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    z-index: 1;
+    margin-left: -40px;
 }
 
 .logo .snow {
@@ -65,14 +71,8 @@ body.light{
     opacity: 0.9;
 }
 
-.logo:hover{
-    transform: scale(1.1);
-}  
-
 .logo span {
-    z-index: 3; 
-    text-shadow: 0 0 25px var(--main-color);
-/* Ensure text is visible above other elements */
+    z-index: 3; /* Ensure text is visible above other elements */
 }
 
 .switch {
@@ -134,6 +134,8 @@ body.light{
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
+    animation: changeColors 390s infinite ease-in-out;
+
 }
 section{
     min-height: 100vh;
@@ -147,6 +149,43 @@ section{
     z-index: 6;
 /*     background:url("../MDA/snowfall.png");
     /*animation: fall 10s linear infinite;*/
+}
+.img_snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+/*     background: url("../MDA/flowers.png") repeat;*/
+    background-size: cover;
+    animation: snowFall 15s linear infinite;
+    will-change: background-position;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+@media (max-width: 768px) {
+    .img_snow {
+        animation: Fall 30s linear infinite;
+        background-size: contain;
+    }
+}
+
+@keyframes Fall {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 200%;
+    }
+}
+@keyframes snowFall {
+    0% {
+        background-position: 0 200%; /* Move further for smoother effect */
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .home-content{
@@ -167,6 +206,7 @@ span{
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-size:3.5rem ;
+    animation: slide-in-left 1s ease-in-out forwards;
 
 }
 .home-content h1{
@@ -174,9 +214,12 @@ span{
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
+    animation: slide-in-left 1s ease-in-out forwards;
 }
 .home-image{
     border-radius: 50%;
+    animation: changeWallpaper 390s infinite ease-in-out,slide-in-right 1s ease-in-out;
+    max-width: 800px;
     height: auto;
     position: relative;
     display: inline-block;
@@ -189,6 +232,7 @@ span{
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    animation: slide-in-right 1s ease-in-out forwards;
     z-index: 1;  /* Ensures the image is above the yellow circle */
 
 }
@@ -202,6 +246,7 @@ span{
     font-weight: 500;
     line-height: 1.8;
     max-width: 1000px;
+    animation: slide-in-left 1s ease-in-out forwards;
 
 }
 .social-icons a {
