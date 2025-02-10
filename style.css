@@ -1078,7 +1078,6 @@ span{
 @media (max-width: 480px) {
      *,html,body{
         overflow-x: hidden;
-        overflow: hidden;
     }
     .img_snow {
         height: 409%;
