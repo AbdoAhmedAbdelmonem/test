@@ -1035,9 +1035,10 @@ span{
         opacity: 0;
     }
      .navbar{
-        position: fixed;
+        position: absolute;
         top: 100%;
-        width: 69%;
+         right:0;
+         width:50%;
         padding: 1rem 3%;
         background: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(20px);
@@ -1045,9 +1046,7 @@ span{
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
         border-right: 2px solid var(--main-color);
-        border-radius: 11px;
         display: none;
-        text-align: center;
     }
 
     .navbar.active {
@@ -1063,8 +1062,8 @@ span{
 
     .home {
         flex-direction: column;
-        margin: 100px 2rem; /* Remove the 5rem 4rem margin */
-        padding: 0; /* Ensure no padding is present */
+        margin: 5rem 4rem; /* Remove the 5rem 4rem margin */
+/*         padding: 0; /* Ensure no padding is present */
     }
 
     .home-content h3 {
