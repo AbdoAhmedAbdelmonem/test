@@ -319,7 +319,7 @@ span{
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 23px 28px;
+    padding: 23px 33px;
     font-size: 16px;
     border-radius: 100px;
     font-weight: 600;
@@ -430,7 +430,7 @@ span{
     width: 90vw;
     height: 80vh;
     background: linear-gradient(45deg, transparent 70%, var(--main-color) 70%);
-    z-index: -1;
+    z-index: 0;
     animation: slide-in-x 2s ease-in-out forwards;
 
 }
@@ -442,7 +442,7 @@ span{
     height: 116vh;
     background: linear-gradient(135deg, transparent 70%, var(--main-color) 70%);
     z-index: -1;
-    animation: slide-in-x2s ease-in-out forwards;
+    animation: slide-in-x 2s ease-in-out forwards;
 
 }
 
@@ -1073,15 +1073,11 @@ span{
         align-items: center;
         gap: 2.5rem;
     }
-    .home-content p,h1{
-        width: 150%;
-        margin-left: -170px;
-    }
 
 }
 @media (max-width: 480px) {
-     body{
-        overflow-x: hidden;
+    body{
+        overflow: hidden;
     }
     .img_snow {
         height: 409%;
@@ -1154,10 +1150,6 @@ span{
     .home-content p {
         max-width: 680px;
         margin: 0 auto;
-    }
-    .home-content p,h1{
-        width: 100%;
-        margin-left: 0;
     }
     .home-image{
         border-radius: 50%;
@@ -1388,4 +1380,16 @@ span{
     height: 100%;
     z-index: -1;
     object-fit: cover;
+}
+#background-audio {
+    display: none;
+}
+
+.background-x img{
+    margin-left: 900px;
+    z-index: 1100;
+}
+.background-y img{
+    margin-top: 300px;
+    margin-left: 1800px;
 }
